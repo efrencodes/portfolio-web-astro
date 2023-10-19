@@ -7,7 +7,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="esß">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
@@ -16,7 +16,22 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class="leading-loose bg-blobs antialiased overflow-x-hidden">
+		<header class="h-[124px] relative z-10 mx-auto max-w-screen-md px-4 sm:px-6 lg:px-8">
+			<nav class="h-[100%]">
+				<ul class="h-[100%] flex flex-row items-center justify-between">
+					<li>
+						<a class="text-neutral-900 text-xs font-semibold font-sans" href="/">EFREN MARTINEZ</a>
+					</li>
+					<li>
+						<a class="text-neutral-900 text-xs font-semibold font-sans" href="mailto:efrencodes@gmail.com">contáctame en:
+							<span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
+							efrencodes@gmail.com
+						</span></a>
+					</li>
+				</ul>
+			</nav>
+		</header>
 		<slot />
 	</body>
 </html>
