@@ -1,0 +1,13 @@
+---
+interface Props {
+	id: string;
+}
+
+const { id } = Astro.props;
+---
+
+<section id={id}>
+	<h1 class="text-neutral-900 text-sm font-semibold font-sans">
+		Últimos artículos
+	</h1>
+</section>

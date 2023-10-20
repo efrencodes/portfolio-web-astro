@@ -1,12 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import HeadLine from '../components/Headline';
-import Section from '../components/Section';
+import HeadLine from '../components/Headline/index.astro';
+import Section from '../components/Section/index.astro';
 ---
 
 <Layout title="Efrén Martínez - Frontend Engineer">
-	<main class="relative z-10 mx-auto max-w-screen-md py-6 px-4 sm:px-6 lg:px-8">
-		<HeadLine id="section-headline" />
-		<Section name="Últimos artículos" id="section-articules"/>
-	</main>
+	<HeadLine id="section-headline" />
+	<Section id="section-articules"/>
 </Layout>
