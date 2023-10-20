@@ -10,11 +10,11 @@ const postsList = [
 	}
 ]
 
-const Section = ({ title, id }) => {
+const Section = ({ name, id }) => {
 	return (
 		<section id={id}>
 			<h1 className="text-neutral-900 text-sm font-semibold font-sans">
-				{title}
+				{name}
 			</h1>
 			{postsList.map(({ title, description, image, url }) => (
 				<Card
