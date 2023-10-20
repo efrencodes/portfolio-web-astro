@@ -1,5 +1,6 @@
 export const postsList = [
   {
+    id: '00001a',
     title: "Cómo convertir un número a formato de moneda en JavaScript",
     description:
       "El método Intl.NumberFormat() nos permite formatear a un valor más legible.",

@@ -2,9 +2,15 @@
 import Base from '@layouts/Base.astro';
 import HeadLine from '@components/Headline/index.astro';
 import Section from '@components/Section/index.astro';
+import Card from '@components/Card/index.astro';
+import { postsList } from '@config/postsList';
 ---
 
 <Base>
 	<HeadLine id="section-headline" />
-	<Section id="section-articules"/>
+	<Section id="section-articules" title="Últimos artículos">
+		{postsList.map(({title, image, description, url}) => (
+			<Card title={title} description={description} image={image} url={url}  />
+		))}
+	</Section>
 </Base>
