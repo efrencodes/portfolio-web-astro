@@ -1,6 +1,6 @@
-const HeadLine = () => {
+const HeadLine = ({ id }) => {
 	return (
-		<section className="flex flex-row gap-5 items-end my-8">
+		<section id={id} className="flex flex-row gap-5 items-end">
 			<img
 				src="https://res.cloudinary.com/efrencodes/image/upload/v1697696694/portfolio-efrencodes-2024/hl8mydwdfkajdlswvhga.jpg"
 				alt="Foto - Efrén Martínez"
