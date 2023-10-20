@@ -1,11 +1,16 @@
 {
-	"extends": "astro/tsconfigs/base",
-	"compilerOptions": {
-		"jsx": "react-jsx",
-		"jsxImportSource": "react",
-		"baseUrl": "./src/",
-		"paths": {
-			"@/*": ["./*"]
-		}
-	}
+  "extends": "astro/tsconfigs/base",
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "baseUrl": ".",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "@layouts/*": ["./src/layouts/*"],
+      "@components/*": ["./src/components/*"],
+      "@config/*": ["./src/config/*"],
+      "@content/*": ["./src/content/*"],
+      "@styles/*": ["./src/styles/*"]
+    }
+  }
 }

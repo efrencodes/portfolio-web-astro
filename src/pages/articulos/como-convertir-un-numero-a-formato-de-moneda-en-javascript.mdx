@@ -1,19 +1,19 @@
 ---
-layout: '../../layouts/BlogLayout.astro'
-title: 'Cómo convertir un número a formato de moneda en JavaScript'
-description: 'El método Intl.NumberFormat() nos permite formatear a un valor más legible.'
-date: '2022-03-31 20:10:46'
+layout: "../../layouts/BlogLayout.astro"
+title: "Cómo convertir un número a formato de moneda en JavaScript"
+description: "El método Intl.NumberFormat() nos permite formatear a un valor más legible."
+date: "2022-03-31 20:10:46"
 tags:
-    - web-development
-    - ecmascript
-    - frontend
-    - javascript
+  - web-development
+  - ecmascript
+  - frontend
+  - javascript
 author:
-    name: Efrén Martínez
+  name: Efrén Martínez
 ogImage: https://res.cloudinary.com/efrencodes/image/upload/v1674800464/www.efrencodes.com/articulos/como-convertir-un-numero-a-formato-de-moneda-en-javascript/og-image.webp
 cover: https://res.cloudinary.com/efrencodes/image/upload/v1672193175/www.efrencodes.com/tecnologies/javascript.svg
-keywords: 'intl javascript, number format, api internacionalización, formatear precio'
-slug: 'como-convertir-un-numero-a-formato-de-moneda-en-javascript'
+keywords: "intl javascript, number format, api internacionalización, formatear precio"
+slug: "como-convertir-un-numero-a-formato-de-moneda-en-javascript"
 ---
 
 Muchas veces he tenido la tarea de convertir un número a un formato de precios. Por ejemplo, si tenemos el precio de un producto como `2300.34` es menos legible que un precio representado como `$ 2300.34` .
@@ -65,9 +65,9 @@ un guión. Por ejemplo:
 <br />
 
 ```javascript
-'en-US' // idioma: inglés | código de país: Estados Unidos
-'de-DE' // idioma: alemán | código de país: Alemania
-'ja-JP' // idioma: japones | código de país: Japon
+"en-US"; // idioma: inglés | código de país: Estados Unidos
+"de-DE"; // idioma: alemán | código de país: Alemania
+"ja-JP"; // idioma: japones | código de país: Japon
 ```
 
 <br />
@@ -76,8 +76,8 @@ Puedes encontrar más código de idiomas o países:
 
 <br />
 
--   [Listado de idiomas](https://www.w3schools.com/tags/ref_language_codes.asp)
--   [Listado de código de país](https://www.w3schools.com/tags/ref_country_codes.asp)
+- [Listado de idiomas](https://www.w3schools.com/tags/ref_language_codes.asp)
+- [Listado de código de país](https://www.w3schools.com/tags/ref_country_codes.asp)
 
 <br />
 
@@ -85,9 +85,9 @@ Puedes encontrar más código de idiomas o países:
 
 <br />
 
--   **style:** Indica el estilo del formato numérico. Los valores aceptados son `decimal` , `currency` y `percent` .
--   **currency**: Indica el tipo de moneda del símbolo que se incluirá al número formateado, por ejemplo: dólar, euro o yenes.
--   **minimumFractionDigits:** Indica los dígitos mínimos que se muestran después del punto decimal.
+- **style:** Indica el estilo del formato numérico. Los valores aceptados son `decimal` , `currency` y `percent` .
+- **currency**: Indica el tipo de moneda del símbolo que se incluirá al número formateado, por ejemplo: dólar, euro o yenes.
+- **minimumFractionDigits:** Indica los dígitos mínimos que se muestran después del punto decimal.
 
 <br />
 
@@ -96,34 +96,34 @@ A continuación te muestro más ejemplos formateando un precio normal a un preci
 <br />
 
 ```javascript
-const priceNormal = 12343.23
+const priceNormal = 12343.23;
 
-const formatterDolar = new Intl.NumberFormat('en-US', {
-	style: 'currency',
-	currency: 'USD',
-	minimumFractionDigits: 2
-})
+const formatterDolar = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+  minimumFractionDigits: 2,
+});
 
-const priceInDolars = formatterDolar.format(priceNormal)
-console.log(priceInDolars) // Devuelve '$12,343.23'
+const priceInDolars = formatterDolar.format(priceNormal);
+console.log(priceInDolars); // Devuelve '$12,343.23'
 
-const formatterEuro = new Intl.NumberFormat('de-DE', {
-	style: 'currency',
-	currency: 'EUR',
-	minimumFractionDigits: 2
-})
+const formatterEuro = new Intl.NumberFormat("de-DE", {
+  style: "currency",
+  currency: "EUR",
+  minimumFractionDigits: 2,
+});
 
-const priceInEuros = formatterEuro.format(priceNormal)
-console.log(priceInEuros) // Devuelve '12.343,23 €'
+const priceInEuros = formatterEuro.format(priceNormal);
+console.log(priceInEuros); // Devuelve '12.343,23 €'
 
-const formatterYenes = new Intl.NumberFormat('ja-JP', {
-	style: 'currency',
-	currency: 'JPY',
-	minimumFractionDigits: 2
-})
+const formatterYenes = new Intl.NumberFormat("ja-JP", {
+  style: "currency",
+  currency: "JPY",
+  minimumFractionDigits: 2,
+});
 
-const priceInYenes = formatterYenes.format(priceNormal)
-console.log(priceInYenes) // Devuelve '￥12,343.23'
+const priceInYenes = formatterYenes.format(priceNormal);
+console.log(priceInYenes); // Devuelve '￥12,343.23'
 ```
 
 <br />
