@@ -2,13 +2,12 @@
     <nav class="h-[100%]">
         <ul class="h-[100%] flex flex-row items-center justify-between">
             <li>
-                <a class="text-neutral-900 text-sm font-semibold font-sans" href="/">EFREN MARTINEZ</a>
+                <slot name="navbar-action-primary">
+                    <a class="text-neutral-900 text-sm font-semibold font-sans" href="#">#</a>
+                </slot>
             </li>
             <li>
-                <a class="text-neutral-900 text-sm font-semibold font-sans cursor-pointer" href="mailto:efrencodes@gmail.com" role="button">contáctame en:
-                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
-                    efrencodes@gmail.com
-                </span></a>
+                <slot name="navbar-action-secondary" />
             </li>
         </ul>
     </nav>

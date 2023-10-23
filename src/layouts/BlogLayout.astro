@@ -19,7 +19,9 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body class="leading-loose antialiased overflow-x-hidden">
-		<Navbar />
+		<Navbar>
+			<a slot="navbar-action-primary" class="text-neutral-900 text-sm font-semibold font-sans" href="/">IR A ATRÁS</a>
+		</Navbar>
 		<main class="mx-auto max-w-screen-md px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
 			<slot />
 		</main>
