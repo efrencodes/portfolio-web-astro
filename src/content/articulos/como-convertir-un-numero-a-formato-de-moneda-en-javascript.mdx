@@ -18,8 +18,8 @@ slug: "como-convertir-un-numero-a-formato-de-moneda-en-javascript"
 Muchas veces he tenido la tarea de convertir un número a un formato de precios. Por ejemplo, si tenemos el precio de un producto como **2300.34** es menos legible que un precio representado como **$ 2300.34**.
 
 <br />
-En un principio la idea mas rápida de realizarlo es usando el método **.toFixed()**
-y concatenar el valor devuelto al precio. Algo así:
+En un principio la idea más rápida de realizarlo es usando el método **.toFixed()**
+y concatenar el valor devuelto al precio. Por ejemplo:
 <br />
 ```javascript
 const priceNumber = 2300.34
@@ -60,7 +60,7 @@ El método **Intl.NumberFormat()** recibe dos parámetros de entrada: locales y 
 <br />
 El primer parámetro **locales** nos permite especificar el idioma y región. Está
 compuesto por la combinación del código de idioma y el código de país separados por
-un guión. Por ejemplo:
+un guion. Por ejemplo:
 
 <br />
 
@@ -74,7 +74,7 @@ un guión. Por ejemplo:
 
 <br />
 
-Puedes encontrar más código de idiomas o países:
+Puedes encontrar más códigos de idiomas y países en:
 
 <br />
 
@@ -85,17 +85,17 @@ Puedes encontrar más código de idiomas o países:
 
 <br />
 
-El segundo parámetro **options** es un objeto con múltiples propiedades, para formatear un número a formato moneda, se requieren 3 propiedades principales.
+El segundo parámetro **options** es un objeto con múltiples propiedades, para formatear un número a formato moneda, se requieren 3 propiedades principales:
 
 <br />
 
 - **style:** Indica el estilo del formato numérico. Los valores aceptados son decimal, currency y percent.
-- **currency**: Indica el tipo de moneda del símbolo que se incluirá al número formateado, por ejemplo: dólar, euro o yenes.
-- **minimumFractionDigits:** Indica los dígitos mínimos que se muestran después del punto decimal.
+- **currency**: Indica el tipo de moneda cuyo símbolo se incluirá en el número formateado, por ejemplo, dólar, euro o yenes.
+- **minimumFractionDigits:** Indica el número mínimo de dígitos que se mostrarán después del punto decimal.
 
 <br />
 
-A continuación te muestro más ejemplos formateando un precio normal a un precio en dólares, euros y yenes.
+A continuación, te muestro más ejemplos de cómo formatear un precio normal a un precio en dólares, euros y yenes.
 
 <br />
 
@@ -129,6 +129,16 @@ const formatterYenes = new Intl.NumberFormat("ja-JP", {
 const priceInYenes = formatterYenes.format(priceNormal);
 console.log(priceInYenes); // Devuelve '￥12,343.23'
 ```
+
+<br />
+
+## Referencias
+
+<ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat" target="_blank">Documentación de Intl.NumberFormat</a></li>
+</ul>
+
+Happy coding ✨
 
 <br />
 <br />
