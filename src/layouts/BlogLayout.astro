@@ -1,28 +1,125 @@
 ---
 import Navbar from '@components/Navbar/index.astro'
+import HeadlinePost from '@components/Post/Headline/index.astro';
 interface Props {
 	title: string;
+	description: string;
+	date: string;
+	tags: string[];
+	authors: string[];
+	ogImage: string;
+	cover: string;
+	keywords: string;
+	slug: string
 }
 
-const { title } = Astro.props;
-
+const { title, description, cover, slug, keywords, ogImage } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="es">
 	<head>
+		<script
+			type="application/ld+json"
+			dangerouslySetInnerHTML={{
+				__html: JSON.stringify({
+				url: `https://efrencodes.com/articulos/${slug}`,
+				title: title,
+				description: description,
+				keywords: keywords,
+				openGraph: {
+					url: `https://efrencodes.com`,
+					siteName: 'Efrén Martínez ✦ @efrencodes',
+					images: {
+						url: ogImage,
+						width: 1920,
+						height: 1080
+					},
+					locale: 'es-MX',
+					type: 'summary_large_image',
+					creator: '@efrencodes'
+				}
+			})
+			}}
+		/>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<link rel="canonical" href={`https://efrencodes.com/articulos/${slug}`} />
+		<link
+			type="text/plain"
+			rel="author"
+			href="https://efrencodes.com/humans.txt"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width,initial-scale=1"
+		/>
+		<meta name="google" content="notranslate" />
+		<meta name="msapplication-TileColor" content="#d4d4d8" />
+		<meta name="robots" content="index, follow" />
+		<meta name="apple-mobile-web-app-title" content={`https://efrencodes.com/articulos/${slug}`} />
+		<meta name="application-name" content={`https://efrencodes.com/articulos/${slug}`} />
+		<meta name="theme-color" content="#d4d4d8" />
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
+		<meta name="author" content={'https://efrencodes.com'} />
+		{/* Open Graph / Facebook */}
+		<meta property="og:type" content={'summary_large_image'} />
+		<meta property="og:url" content={`https://efrencodes.com/articulos/${slug}`} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={cover} />
+		<meta
+			property="og:image:alt"
+			content={`https://efrencodes.com/articulos/${slug}`}
+		/>
+		<meta
+			property="og:image:width"
+			content={'1920'}
+		/>
+		<meta
+			property="og:image:height"
+			content={'1080'}
+		/>
+		<meta property="og:locale" content={'es-MX'} />
+		<meta
+			property="og:site_name"
+			content={`https://efrencodes.com/articulos/${slug}`}
+		/>
+		{/* Twitter */}
+		<meta property="twitter:card" content={'summary_large_image'} />
+		<meta property="twitter:url" content={`https://efrencodes.com/articulos/${slug}`} />
+		<meta
+			property="twitter:title"
+			content={`https://efrencodes.com/articulos/${slug}`}
+		/>
+		<meta
+			property="twitter:description"
+			content={description}
+		/>
+		<meta
+			property="twitter:image"
+			content={cover}
+		/>
+		<meta
+			property="twitter:creator"
+			content={'@efrencodes'}
+		/>
+		<meta
+			property="twitter:site"
+			content={`https://efrencodes.com/articulos/${slug}`}
+		/>
+		<meta property="twitter:image:alt" content={title} />
 	</head>
 	<body class="leading-loose antialiased overflow-x-hidden">
 		<Navbar>
 			<a slot="navbar-action-primary" class="text-neutral-900 text-sm font-semibold font-sans" href="/">IR A ATRÁS</a>
 		</Navbar>
 		<main class="mx-auto max-w-screen-md px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+			<HeadlinePost title={title} description={description} cover={cover} />
 			<slot />
 		</main>
 	</body>
