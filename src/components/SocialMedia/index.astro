@@ -1,0 +1,17 @@
+---
+import social from "@config/social";
+const socialItems = social.networks;
+const onlySocialItems = socialItems.filter(item => item.show === false);
+---
+
+<div class="flex space-x-5 mt-4 m-auto">
+  {
+    onlySocialItems?.map((item) => (
+        <a href={item.url} target="_blank" rel="noopener noreferrer">
+            <figure>
+                <Fragment set:html={item.svg} />
+            </figure>
+        </a>
+    ))
+  }
+</div>

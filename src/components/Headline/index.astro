@@ -1,4 +1,5 @@
 ---
+import SocialMedia from '@components/SocialMedia/index.astro';
 import { Image } from 'astro:assets';
 interface Props {
 	id: string;
@@ -33,5 +34,6 @@ const { id } = Astro.props;
 		<p class="text-neutral-900 text-sm font-semibold mt-4 font-sans">
 			encuentráme en:
 		</p>
+		<SocialMedia />
 	</div>
 </section>
