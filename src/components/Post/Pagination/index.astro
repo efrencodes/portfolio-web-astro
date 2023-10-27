@@ -1,0 +1,67 @@
+---
+interface Props {
+  urlNext?: string;
+  urlPrevious?: string;
+  titleNext?: string;
+  titlePrevious?: string;
+}
+
+const {
+  urlNext,
+  urlPrevious,
+  titleNext,
+  titlePrevious,
+} = Astro.props;
+---
+
+<section
+  id="post-pagination"
+  class="flex flex-row gap-y-2 justify-between min-h-[100px] items-center border-t border-b border-gray-200"
+>
+  {
+    urlPrevious && (
+      <a
+        class="inline-flex items-center gap-2 text-neutral-900 text-sm font-semibold font-sans underline uppercase underline-offset-2"
+        href={urlPrevious}
+      >
+        <svg
+          class="w-3 h-3"
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+          />
+        </svg>
+        {titlePrevious}
+      </a>
+    )
+  }
+  {
+    urlNext && (
+      <a
+        class="inline-flex items-center gap-2 text-neutral-900 text-sm font-semibold font-sans underline uppercase underline-offset-2"
+        href={urlNext}
+      >
+        {titleNext}
+        <svg
+          class="w-3 h-3 rotate-180"
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+          />
+        </svg>
+      </a>
+    )
+  }
+</section>

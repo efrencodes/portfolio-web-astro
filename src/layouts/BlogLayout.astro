@@ -1,6 +1,7 @@
 ---
 import Navbar from '@components/Navbar/index.astro'
 import HeadlinePost from '@components/Post/Headline/index.astro';
+import Pagination from '@components/Post/Pagination/index.astro';
 interface Props {
 	title: string;
 	description: string;
@@ -10,10 +11,14 @@ interface Props {
 	ogImage: string;
 	cover: string;
 	keywords: string;
-	slug: string
+	slug: string;
+	urlNext?: string;
+	urlPrevious?: string;
+	titleNext?: string;
+	titlePrevious?: string;
 }
 
-const { title, description, cover, slug, keywords, ogImage } = Astro.props;
+const { title, description, cover, slug, keywords, ogImage, urlNext, urlPrevious, titleNext, titlePrevious } = Astro.props;
 ---
 
 <!doctype html>
@@ -121,6 +126,7 @@ const { title, description, cover, slug, keywords, ogImage } = Astro.props;
 		<main class="mx-auto max-w-screen-md px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
 			<HeadlinePost title={title} description={description} cover={cover} />
 			<slot />
+			<Pagination urlNext={urlNext} urlPrevious={urlPrevious} titleNext={titleNext} titlePrevious={titlePrevious}  />
 		</main>
 	</body>
 </html>
