@@ -29,34 +29,33 @@ const {
   urlPrevious,
   titleNext,
   titlePrevious,
+  date,
 } = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  datePublished: date,
+  description: description,
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": `https://efrencodes.com/articulos/${slug}`,
+  },
+  keywords: [keywords],
+  headline: title,
+  image: [ogImage],
+  author: {
+    "@type": "Person",
+    name: "Efrén Martínez",
+    url: `https://efrencodes.com/`,
+  },
+};
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{
-        __html: JSON.stringify({
-          url: `https://efrencodes.com/articulos/${slug}`,
-          title: title,
-          description: description,
-          keywords: keywords,
-          openGraph: {
-            url: `https://efrencodes.com`,
-            siteName: "Efrén Martínez ✦ @efrencodes",
-            images: {
-              url: ogImage,
-              width: 1920,
-              height: 1080,
-            },
-            locale: "es-MX",
-            type: "summary_large_image",
-            creator: "@efrencodes",
-          },
-        }),
-      }}></script>
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
