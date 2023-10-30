@@ -28,7 +28,7 @@ export const metadataDefault: metadataProps = {
     url: "https://efrencodes.com",
     siteName: "Efrén Martínez - Frontend Engineer",
     images: {
-      url: "https://res.cloudinary.com/efrencodes/image/upload/v1674800149/www.efrencodes.com/og-image-efrencodes.webp",
+      url: "/images/profile-efren-martinez.jpg",
       width: "1920",
       height: "1080",
     },
