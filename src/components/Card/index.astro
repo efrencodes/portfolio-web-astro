@@ -1,40 +1,51 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 
 interface Props {
-	title: string;
-	image: string;
-	url: string;
-	description: string
+  title: string;
+  image: string;
+  url: string;
+  description: string;
 }
 
-const { image, title, url, description } = Astro.props
+const { image, title, url, description } = Astro.props;
 ---
 
-<article class="flex flex-col sm:flex-row gap-5 p-2 items-start sm:items-center min-h-[110px] mt-4 shadow-blue-500/50 rounded-md bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50">
-	<Image
-		src={image}
-		alt={title}
-		height="100"
-		width="100"
-		class="rounded-md h-[100px] w-[100px] sm:h-[197px] sm:w-[197px]"
-	/>
-	<div>
-		<a href={url} class="cursor-pointer">
-			<h2 class="text-neutral-900 text-base font-semibold leading-loose">
-				{title}
-			</h2>
-		</a>
-		<h3 class="text-gray-700 text-sm font-medium leading-loose mt-2">
-			{description}
-		</h3>
-		<a href={url} class="cursor-pointer">
-			<p class="mt-4 inline-flex items-center gap-x-1.5 text-neutral-900 text-sm font-semibold font-sans">
-				Ver artículo
-				<svg class="w-2.5 h-2.5" width="16" height="16" viewBox="0 0 16 16" fill="none">
-				  <path d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-				</svg>
-			</p>
-		</a>
-	</div>
+<article
+  class="flex flex-col sm:flex-row gap-5 p-2 items-start sm:items-center min-h-[110px] mt-4 shadow-blue-500/50 rounded-md bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50"
+>
+  <Image
+    src={image}
+    alt={title}
+    height="100"
+    width="100"
+    class="rounded-md h-[100px] w-[100px] sm:h-[197px] sm:w-[197px]"
+  />
+  <div>
+    <a href={url} class="cursor-pointer">
+      <h2 class="text-neutral-900 text-base font-semibold leading-loose">
+        {title}
+      </h2>
+    </a>
+    <h3 class="text-gray-700 text-sm font-medium leading-loose mt-2">
+      {description}
+    </h3>
+    <a href={url} class="cursor-pointer">
+      <p
+        class="mt-4 inline-flex items-center gap-x-1.5 text-neutral-900 text-sm font-semibold font-sans"
+      >
+        Ver artículo
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          fill="#000000"
+          viewBox="0 0 256 256"
+          ><path
+            d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"
+          ></path></svg
+        >
+      </p>
+    </a>
+  </div>
 </article>
