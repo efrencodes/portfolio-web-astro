@@ -41,7 +41,7 @@ export const metadataDefault: metadataProps = {
 export const structuredData = {
   "@context": "http://schema.org",
   "@type": "Person",
-  email: "mailto:efrencodes@gmail.com",
+  email: "mailto:hey@efrencodes.com",
   image: "",
   jobTitle: "Frontend Engineer",
   name: "Efrén Martínez",
