@@ -13,10 +13,6 @@ export default defineConfig({
     sitemap({
       changefreq: "weekly",
       priority: 0.7,
-      customPages: [
-        "https://www.efrencodes.com/articulos/como-convertir-un-numero-a-formato-de-moneda-en-javascript",
-        "https://www.efrencodes.com/articulos/dominando-el-arte-de-los-slots-en-astro",
-      ],
     }),
   ],
   output: "static",
