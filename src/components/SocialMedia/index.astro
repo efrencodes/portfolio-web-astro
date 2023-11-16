@@ -7,7 +7,7 @@ const onlySocialItems = socialItems.filter(item => item.show === false);
 <div class="flex space-x-5 mt-4 m-auto">
   {
     onlySocialItems?.map((item) => (
-        <a href={item.url} target="_blank" rel="noopener noreferrer">
+        <a href={item.url} target="_blank" rel="noopener noreferrer" aria-label={item.ariaLabel}>
             <figure>
                 <Fragment set:html={item.svg} />
             </figure>
