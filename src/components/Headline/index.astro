@@ -1,39 +1,40 @@
 ---
-import SocialMedia from '@components/SocialMedia/index.astro';
-import { Image } from 'astro:assets';
+import SocialMedia from "@components/SocialMedia/index.astro";
+import { Image } from "astro:assets";
 interface Props {
-	id: string;
+  id: string;
 }
 
 const { id } = Astro.props;
 ---
 
-<section id={id} class="flex flex-col sm:flex-row gap-5 items-start sm:items-end mb-10">
-	<Image
-		src="/images/profile-efren-martinez.jpg"
-		alt="Foto - Efrén Martínez"
-		height="197"
-		width="197"
-		class="rounded-md h-[100px] w-[100px] sm:h-[197px] sm:w-[197px]"
-	/>
-	<div>
-		<h1 class="text-neutral-900 text-2xl font-semibold leading-loose">
-			Efrén Martínez
-		</h1>
-		<h2 class="text-gray-700 text-base font-medium leading-loose mt-3">
-			<span class="text-teal-500">
-				Desarrollador frontend
-			</span>{' '}
-			especializado en{' '}
-			<span class="text-amber-500">#javascript</span>.
-			Enfocado en desarrollo web con tecnologias como{' '}
-			<span class="text-green-500">#vuejs</span>,{' '}
-			<span class="text-cyan-500">#react</span> y{' '}
-			<span class="text-blue-500">#typescript</span>.
-		</h2>
-		<p class="text-neutral-900 text-sm font-semibold mt-4 font-sans">
-			encuentráme en:
-		</p>
-		<SocialMedia />
-	</div>
+<section
+  id={id}
+  class="flex flex-col sm:flex-row gap-5 items-start sm:items-end mb-10"
+>
+  <Image
+    src="/images/profile-efren-martinez.webp"
+    alt="Foto - Efrén Martínez"
+    height="197"
+    width="197"
+    class="rounded-md h-[100px] w-[100px] sm:h-[197px] sm:w-[197px]"
+  />
+  <div>
+    <h1 class="text-neutral-900 text-2xl font-semibold leading-loose">
+      Efrén Martínez
+    </h1>
+    <h2 class="text-gray-700 text-base font-medium leading-loose mt-3">
+      <span class="text-teal-600">Frontend Engineer</span>{" "}
+       especializado en{" "}
+      <span class="text-amber-600">#javascript</span>. Enfocado en desarrollo
+      web con tecnologias como{" "}
+      <span class="text-green-600">#vuejs</span>,{" "}
+      <span class="text-cyan-600">#react</span> y{" "}
+      <span class="text-blue-600">#typescript</span>.
+    </h2>
+    <p class="text-neutral-900 text-sm font-semibold mt-4 font-sans">
+      Encuentráme en:
+    </p>
+    <SocialMedia />
+  </div>
 </section>
