@@ -1,16 +1,26 @@
 ---
-import BaseLayout from '@layouts/BaseLayout.astro';
-import HeadLine from '@components/Headline/index.astro';
-import Section from '@components/Section/index.astro';
-import Card from '@components/Card/index.astro';
-import { postsList } from '@config/postsList';
+import { getCollection } from "astro:content";
+
+import BaseLayout from "@layouts/BaseLayout.astro";
+import HeadLine from "@components/Headline/index.astro";
+import Section from "@components/Section/index.astro";
+import Card from "@components/Card/index.astro";
+
+const allBlogPosts = await getCollection("articulos");
 ---
 
 <BaseLayout>
-	<HeadLine id="section-headline" />
-	<Section id="section-articules" title="Últimos artículos">
-		{postsList.map(({title, image, description, url}) => (
-			<Card title={title} description={description} image={image} url={url}  />
-		))}
-	</Section>
+  <HeadLine id="section-headline" />
+  <Section id="section-articules" title="Últimos artículos">
+    {
+      allBlogPosts.map(({ data }) => (
+        <Card
+          title={data?.title}
+          description={data?.description}
+          image={data?.cover}
+          url={`articulos/${data?.slug}`}
+        />
+      ))
+    }
+  </Section>
 </BaseLayout>
