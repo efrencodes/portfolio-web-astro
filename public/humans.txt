@@ -1,6 +1,6 @@
 /* TEAM */
 	Chef: Efren Martinez
-	Contact: efrencodes [at] gmail.com
+	Contact: hey [at] efrencodes.com
 	Twitter: @efrencodes
 	From: Queretaro, Mexico.
 
