@@ -1,26 +1,33 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 interface Props {
-	title: string;
-    description: string;
-    cover: string;
+  title: string;
+  description: string;
+  cover: string;
 }
 
 const { title, description, cover } = Astro.props;
 ---
 
-<section id="section-headline-post" class="pb-6 flex flex-col sm:flex-row gap-5 items-start sm:items-end">
-    <Image
-		src={cover}
-		alt={title}
-		height="197"
-		width="197"
-		class="rounded-md h-[100px] w-[100px] sm:h-[197px] sm:w-[197px]"
-	/>
-    <div>
-        <h1 class="text-3xl font-medium text-gray-900 mt-5">
-                {title}
-        </h1>
-        <p class="italic text-sm mt-2">{description}</p>
-    </div>
+<section
+  id="section-headline-post"
+  class="pb-6 flex flex-col sm:flex-row gap-5 items-start sm:items-end"
+>
+  {
+    cover && (
+      <Image
+        src={cover}
+        alt={title}
+        height="197"
+        width="197"
+        class="rounded-md h-[100px] w-[100px] sm:h-[197px] sm:w-[197px]"
+      />
+    )
+  }
+  <div>
+    <h1 class="text-3xl font-medium text-gray-900 mt-5">
+      {title}
+    </h1>
+    <p class="italic text-sm mt-2">{description}</p>
+  </div>
 </section>

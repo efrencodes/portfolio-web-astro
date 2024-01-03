@@ -14,13 +14,17 @@ const { image, title, url, description } = Astro.props;
 <article
   class="flex flex-col sm:flex-row gap-5 p-2 items-start sm:items-center min-h-[110px] mt-4 shadow-blue-500/50 rounded-md bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50"
 >
-  <Image
-    src={image}
-    alt={title}
-    height="100"
-    width="100"
-    class="rounded-md h-[100px] w-[100px] sm:h-[197px] sm:w-[197px]"
-  />
+  {
+    image && (
+      <Image
+        src={image}
+        alt={title}
+        height="100"
+        width="100"
+        class="rounded-md h-[100px] w-[100px] sm:h-[197px] sm:w-[197px]"
+      />
+    )
+  }
   <div>
     <a href={url} class="cursor-pointer">
       <h2 class="text-neutral-900 text-base font-semibold leading-loose">
