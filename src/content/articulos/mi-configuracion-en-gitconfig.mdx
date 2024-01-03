@@ -1,0 +1,54 @@
+---
+title: "Mi configuración en gitconfig"
+description: ""
+date: "2023-02-02T01:00:00Z"
+tags: ['git', 'gitconfig']
+authors: ['Efrén Martínez']
+ogImage: /images/og-image/mi-configuracion-en-gitconfig.webp
+cover: /images/cover/git.svg
+keywords: ""
+slug: "my-git-config"
+urlPrevious: "como-usar-los-slots-en-astro"
+titlePrevious: "Como usar los slots en astro"
+---
+
+<article class="prose-a:text-pink-600 prose-a:underline prose-a:leading-loose prose-h2:text-2xl prose-h2:font-medium
+				prose-h2:text-gray-800 prose-strong:text-gray-900 prose-strong:font-semibold
+				prose-strong:lining-num prose-pre:p-4 prose-pre:rounded-md prose-pre:shadow-lg prose-ul:list-disc prose-ul:mt-4 prose-ul:mb-4 prose-ul:list-inside prose-li:text-gray-600
+				prose-li:font-normal prose-li:text-base">
+<br />
+
+```git
+[user]
+	name = name
+	email = mail
+[alias]
+	br = branch -a
+	a = add .
+	i = init
+	s = status
+	sh = stash
+	shs = stash save
+	shl = stash list
+	shp = stash pop
+	shd = stash drop
+	ps = push origin main
+	pl = pull origin main
+	psd = push origin development
+	pld = pull origin development
+	l = "log --graph --abbrev-commit --date=relative --all --format=format:'%C(bold blue)%h%C(reset) %C(bold green)(%>(18,trunc)%aD)%C(reset) %C(bold blue)[%<(10,trunc)%aN]%Creset - %s%C(reset) %C(bold yellow)%d%C(reset)'"
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[color]
+	ui = auto
+[init]
+	defaultBranch = main
+```
+
+<br/>
+<br/>
+<br/>
+</article>
