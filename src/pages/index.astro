@@ -6,7 +6,12 @@ import HeadLine from "@components/Headline/index.astro";
 import Section from "@components/Section/index.astro";
 import Card from "@components/Card/index.astro";
 
-const allBlogPosts = await getCollection("articulos");
+const allBlogPosts = (
+  await getCollection(
+    'articulos',
+    ({ data }) => data.pubDate <= new Date()
+  )
+).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <BaseLayout>
