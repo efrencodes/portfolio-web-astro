@@ -1,13 +1,13 @@
 ---
-title: "Mi configuración en gitconfig"
-description: ""
+title: "Cómo crear y usar los alias en Git"
+description: "Cómo configurar atajos personalizados para simplificar comandos más utilizados o complejos"
 date: "2023-02-02T01:00:00Z"
-tags: ['git', 'gitconfig']
+tags: ['web development', 'git']
 authors: ['Efrén Martínez']
 ogImage: /images/og-image/mi-configuracion-en-gitconfig.webp
 cover: /images/cover/git.svg
-keywords: ""
-slug: "my-git-config"
+keywords: "Git Alias, Productividad en Git, Simplificar comandos, Optimizar flujo de trabajo, Atajos en Git, Configuración de alias, Comandos personalizados"
+slug: "como-crear-y-usar-alias-en-git"
 urlPrevious: "como-usar-los-slots-en-astro"
 titlePrevious: "Como usar los slots en astro"
 ---
@@ -18,35 +18,91 @@ titlePrevious: "Como usar los slots en astro"
 				prose-li:font-normal prose-li:text-base">
 <br />
 
-```git
-[user]
-	name = name
-	email = mail
+Los alias en Git es una forma de crear atajos para tus comandos más utilizados o complejos.
+<br/>
+<br/>
+
+## Cómo crear un alias
+<br/>
+
+Vamos a crear un alias para el comando **git status** , permitiendo escribir **git s** en lugar de **git status** para obtener el mismos resultado.
+<br/>
+
+```bash
+$ git config --global alias.s status
+
+```
+<br/>
+<br/>
+
+## Cómo usar un alias
+<br/>
+
+Para poder usar el alias ya creado, solo debemos escribir git seguido del alias.
+Al escribir **git s**, se ejecutará el comando **git status**, mostrando el estado actual del repositorio. Por ejemplo:
+<br/>
+
+```bash
+$ git s
+
+On branch main
+Your branch is up to date with 'origin/main.
+
+nothing to commit, working tree clean
+
+```
+<br/>
+
+¡Exacto! Los alias son útiles para simplificar y agilizar el uso de comandos extensos o complejos, haciendo el flujo de trabajo más eficiente.
+<br/>
+<br/>
+
+## Cómo listar los alias
+<br/>
+
+Para listar todos los alias configurados en GIt, puedes utilizar el siguiente comando en tu terminal
+<br/>
+
+```bash
+$ git config --list --show-origin
+
+```
+<br/>
+<br/>
+
+## Listado de mis alias
+<br/>
+
+Te comparto mi listado que uso en mi computadora personal y del trabajo.
+<br/>
+
+```bash
 [alias]
 	br = branch -a
 	a = add .
 	i = init
+	m = commit -m
 	s = status
 	sh = stash
 	shs = stash save
 	shl = stash list
 	shp = stash pop
 	shd = stash drop
-	ps = push origin main
-	pl = pull origin main
-	psd = push origin development
-	pld = pull origin development
+	ps = push origin
+	pl = pull origin
 	l = "log --graph --abbrev-commit --date=relative --all --format=format:'%C(bold blue)%h%C(reset) %C(bold green)(%>(18,trunc)%aD)%C(reset) %C(bold blue)[%<(10,trunc)%aN]%Creset - %s%C(reset) %C(bold yellow)%d%C(reset)'"
-[filter "lfs"]
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-[color]
-	ui = auto
-[init]
-	defaultBranch = main
+
 ```
+<br/>
+<br/>
+
+## Referencias
+<br/>
+
+<ul>
+  <li><a href="https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases" target="_blank">Git Aliases</a></li>
+  <li><a href="https://www.git-tower.com/learn/git/faq/how-to-set-up-git-aliases" target="_blank">How to set up git aliases</a></li>
+</ul>
 
 <br/>
 <br/>
