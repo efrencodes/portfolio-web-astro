@@ -11,6 +11,7 @@ const blog = defineCollection({
         cover: z.string(),
         keywords: z.string(),
         slug: z.string(),
+        order: z.number()
     })
 })
 
